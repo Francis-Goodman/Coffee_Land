@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "Brazil - Coffee Arabica",
+        "price": 10.99,
+        "image": { "fields": { "file": { "url": "nadia-valko-7QlJ79Cj43w-unsplash.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Vietnam - Coffee Caniphora",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "nadia-valko-7QlJ79Cj43w-unsplash.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "Philipines - Coffee Liberica",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "nadia-valko-7QlJ79Cj43w-unsplash.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "Vietnam - Coffee liberica var. dewevrei",
+        "price": 22.99,
+        "image": { "fields": { "file": { "url": "nadia-valko-7QlJ79Cj43w-unsplash.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "Ethiopia- Coffee Arabica",
+        "price": 88.99,
+        "image": { "fields": { "file": { "url": "nadia-valko-7QlJ79Cj43w-unsplash.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "Uganda - Robusta",
+        "price": 32.99,
+        "image": { "fields": { "file": { "url": "nadia-valko-7QlJ79Cj43w-unsplash.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "Indonesia- Coffee Robusta",
+        "price": 45.99,
+        "image": { "fields": { "file": { "url": "nadia-valko-7QlJ79Cj43w-unsplash.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "Columbia- Coffee Arabica",
+        "price": 33.99,
+        "image": { "fields": { "file": { "url": "nadia-valko-7QlJ79Cj43w-unsplash.jpg" } } }
+      }
+    }
+  ]
+}

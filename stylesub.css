@@ -1,0 +1,847 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+/* --------------- Sitewide---------------- */
+:root {
+  --primaryColor: #8f4b35;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: "Lato", sans-serif;
+  background-color: #a46b58;
+}
+
+/* --------------- Navbar - Sitewide---------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(231, 226, 221);
+  z-index: 1;
+}
+.navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.navbar-center img {
+  max-height: 60px;
+}
+.nav-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* .nav-icon img {
+
+    width: 250px;
+    height: 100px;
+  
+} */
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+/* --------------- End of Navbar ---------------- */
+
+/* --------------- Sitewide - Vertical Navigation  ---------------- */
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: var(--mainTransition);
+  background: rgb(240, 157, 81, 0.5);
+  z-index: 2;
+  visibility: hidden;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: rgb(231, 226, 221);
+  padding: 1.5rem;
+  transition: var(--mainTransition);
+  transform: translateX(-100%);
+}
+
+.close-sidebar {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.showSidebar {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px 25px;
+  margin-left: 5px;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+
+.sidebar ul li a:hover {
+  border-left: 8px solid rgb(106, 83, 83);
+  transition: var(--mainTransition);
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
+/* ---------------End of Vertical Navigation  ---------------- */
+/* --------------- Cart - Sitewide ---------------- */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: var(--mainTransition);
+  background: rgb(240, 157, 81, 0.5);
+  z-index: 2;
+  visibility: hidden;
+}
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: rgb(231, 226, 221);
+  padding: 1.5rem;
+  transition: var(--mainTransition);
+  transform: translateX(100%);
+}
+.showCart {
+  transform: translateX(0);
+}
+.transparentBcg {
+  visibility: visible;
+}
+@media screen and (min-width: 768px) {
+  .cart {
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
+.close-cart {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.cart h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+/*---------- Cart Item - Sitewide -------------------- */
+.cart-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.cart-item img {
+  width: 75px;
+  height: 75px;
+}
+.cart-item h4 {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.cart-item h5 {
+  margin: 0.5rem 0;
+  letter-spacing: var(--mainSpacing);
+}
+.item-amount {
+  text-align: center;
+}
+.remove-item {
+  color: grey;
+  cursor: pointer;
+}
+.fa-chevron-up,
+.fa-chevron-down {
+  color: var(--primaryColor);
+  cursor: pointer;
+}
+/*---------- End of Cart Item -------------------- */
+/*---------- Cart Item -------------------- */
+.cart-footer {
+  margin-top: 2rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+.cart-footer h3 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+.banner-btn:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+/* --------------- End of Cart ---------------- */
+
+.subSize{
+
+    height: 250px;
+    width: 250px;
+
+
+}
+
+.hero {
+  min-height: calc(50vh - 60px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  /* This ensures that the hero image is  80% of the screen size minus 60px which is the height of the Navbar */
+  background: url("pexels-burst-374852.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+
+.copyText {
+  margin-left: 100px;
+  margin-right: 100px;
+  
+}
+
+
+.containerone {
+
+    height: 150px;
+    width: 100%;
+ 
+}
+
+.cards {
+    
+    /* display: flex replaces floats and gets elements to move out of the normal document flow */
+    display: flex;
+    justify-content: space-between;
+    text-align: center;  
+    max-width: 100%;
+}
+
+.card1 {
+    background-image: url(subscription1.png);
+    min-height: 38vh;
+    width: 30%;
+    background-size:cover;
+   
+    background-position: center;
+  
+    /* border-radius: 12px; */
+    box-shadow: 0px 2px 2px  rgba(0, 0, 0, 0.397);
+    
+
+}
+
+.card2 {
+    background-image: url(subscription2.png);
+    min-height: 38vh;
+    width: 30%;
+    background-size: cover;
+    background-position: center;
+    /* border-radius: 12px; */
+    box-shadow: 0px 2px 2px  rgba(0, 0, 0, 0.397);
+    
+
+}
+
+.card3 {
+    background-image: url(subscription3.png);
+    /* min-height: 38vh; */
+    width: 30%;
+  background-size: cover;
+    background-position: center;
+    /* border-radius: 12px; */
+    box-shadow: 0px 2px 2px  rgba(0, 0, 0, 0.397);
+    
+
+}
+
+@media (max-width:767px)
+{
+  .card3
+  {
+    display:flex;
+    margin-right:0;
+    
+  }
+
+  
+}
+.card3 button {
+
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+    margin-top: 10px ; /*  10 top 30 left 20 bottom 30 right */
+ }  
+
+
+.btny {
+
+   margin-bottom: -70px ;
+   color: #8f4b35;
+   
+}
+
+.card1:hover {
+   
+  color:#8f4b35;
+
+}
+
+.card2:hover {
+   
+  background-color:#8f4b35;
+
+}
+
+.card3:hover {
+   
+  background-color:#8f4b35;
+
+}
+.card1, .card2, .card3 {
+    padding: 30px 30px 20px 30px;
+    box-sizing: border-box;
+
+}
+
+.questions {
+    padding: 20px;
+}
+
+
+
+/* --------------- Footer ---------------- */
+
+.bottompart{
+
+  width: 100%;
+}
+
+  .site-footer
+  {
+    padding-bottom:0;
+    width: auto;
+   
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+
+
+  .site-footer
+{
+  background-color:#8f7e6f;
+  padding:15px 0 15px;
+  font-size:15px;
+  line-height:24px;
+  color:#fff;
+  
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#fff
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#fff;
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+/* .site-footer .social-icons
+{
+  text-align:right
+} */
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.instagram:hover
+{
+  background-color:#b6007c
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+
+  
+}
+/* --------------- End of Footer ---------------- */
+
+.sub-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+}
+
+.product-img {
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+  transition: var(--mainTransition);
+}
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.sub-center .btn {
+  position: absolute;
+  top: 94%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:#8f4b35;
+  color: white;
+  font-size: 16px;
+  padding: 5px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.sub-center .btn:hover {
+  background-color: white;
+  color: #8f4b35;
+}
+
+/*styles to layout when you click the login page*/
+
+img {
+  height: auto;
+}
+
+/* body {font-family: Arial, Helvetica, sans-serif;} */
+
+/* Full-width input fields */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #8f4b35;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: rgb(155, 141, 63);
+}
+
+/* Center the image and position the close button */
+.imgcontainer1 {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.Background {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container1 {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.cancelbtn {
+  width: 100%;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+/*can't get to implement for some reason*/
+
+#message {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  content: "✖";
+}
+
+#Heading {
+  color: black;
+  background: #8f4b35;
+  text-align: center;
+}
+
+#Sub {
+  width: 100%;
+  height: 650px;
+  border-radius: 50%;
+}
+
+#Logo {
+  width: 100%;
+}
+
+#leftButton {
+  width: 100%;
+  height: 75%;
+  margin-top: 50px;
+  border-radius: 50%;
+}
+
+#RightButton {
+  width: 100%;
+  height: 75%;
+  margin-top: 50px;
+  border-radius: 50%;
+}
+
+#subscription {
+  width: 13vw;
+  height: 200px;
+}
+
+#subButton {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+  margin: 8px 0;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  /* font-family: Papyrus, Times, Fantasy; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#subButton:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+
+#login {
+  background-color: rgb(231, 226, 221);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  height: 44px;
+  /* font-family: Papyrus, Times, Fantasy; */
+  font-size: 23px;
+}
+
+#submit {
+  background-color: #8f4b35;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#COFFEESUBSCRIPTIONS {
+  padding: 14px 0px;
+  margin: 8px 0;
+}
